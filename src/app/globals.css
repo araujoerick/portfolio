@@ -8,15 +8,27 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono); */
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+} */
+
+@utility btn-primary {
+  @apply cursor-pointer rounded-xl border-[3px] bg-lime-400 p-4 font-medium shadow-[4px_4px_0px_rgba(0,0,0)] duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none;
+}
+
+@utility btn-secondary {
+  @apply cursor-pointer rounded-xl border-[3px] border-transparent bg-lime-100 p-4 shadow-none duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:border-[3px] hover:border-black hover:shadow-[4px_4px_0px_rgba(0,0,0)];
+}
+
+@utility link-secondary {
+  @apply rounded-xl border-[3px] border-transparent p-2 font-bold shadow-none duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:border-[3px] hover:border-black hover:bg-lime-400 hover:shadow-[4px_4px_0px_rgba(0,0,0)];
 }
 
 body {
