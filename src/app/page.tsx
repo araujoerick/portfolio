@@ -7,23 +7,38 @@ const Home = () => {
   return (
     <>
       <Header />
-      <div className="grid h-[calc(100vh-166px)] w-full grid-cols-2 items-center justify-center bg-lime-300">
-        <div className="grid h-full grid-rows-2 text-black">
-          <div className="border-r-4 border-b-4 bg-lime-100 p-16">
-            <p className="text-9xl font-bold uppercase">Erick</p>
-            <p className="text-9xl font-bold uppercase">Araujo</p>
+      <main className="grid h-[calc(100vh-166px)] w-full grid-cols-2 items-center justify-center bg-lime-300 text-black">
+        <div className="grid h-full grid-rows-[30%,70%] text-black">
+          <div className="flex items-center border-r-4 border-b-4 bg-lime-100 p-10">
+            <h2 className="text-[clamp(2.5rem,4vw,3.75rem)] font-semibold text-black">
+              Desenvolvedor
+              <br />
+              Front-end
+            </h2>
           </div>
 
-          <div className="border-r-4 bg-lime-50 p-16">
-            <h2 className="text-6xl font-bold text-black">
-              Desenvolvedor Frontend
-            </h2>
-            <button className="btn-primary">Projetos</button>
+          <div className="flex flex-col items-start justify-center border-r-4 bg-lime-50 p-10 xl:gap-4">
+            <p className="mb-4 text-[clamp(1rem,1.5vw,1.25rem)] leading-relaxed font-semibold text-balance">
+              Desenvolvedor Front-end focado em construir aplicações web
+              modernas e performáticas. Sou graduado em Sistemas de Informação e
+              atualmente estou cursando uma pós-graduação em Desenvolvimento
+              Fullstack. Possuo experiência com React e Next.js utilizando
+              TypeScript e JavaScript, além de tecnologias como Node.js, Prisma,
+              APIs REST, Tailwind CSS e outras ferramentas do ecossistema web.
+            </p>
+            <p className="text-[clamp(1rem,1.5vw,1.25rem)] leading-relaxed font-semibold text-balance">
+              Minhas experiências anteriores me permitiram desenvolver
+              habilidades essenciais como comunicação, trabalho em equipe e
+              resolução de problemas. Sou apaixonado por criar interfaces
+              intuitivas e responsivas, sempre buscando as melhores práticas de
+              acessibilidade, usabilidade e design.
+            </p>
           </div>
         </div>
 
-        <div className="flex h-full items-center justify-center">
-          <div className="group relative pb-8">
+        <div className="grid h-full w-full grid-rows-[70%,30%] gap-8">
+          <div className="flex h-full w-full items-center justify-center">
+            <div className="group relative p-4 pb-8">
             <Image
               src="/perfil-base.png"
               alt="Foto de perfil"
@@ -40,7 +55,7 @@ const Home = () => {
             >
               <FaLinkedin
                 size={32}
-                className="absolute right-4 bottom-[72px] cursor-pointer text-lime-300 transition-colors duration-300 hover:text-lime-400"
+                  className="absolute right-5 bottom-[78px] cursor-pointer text-lime-300 transition-colors duration-300 hover:text-lime-400"
               />
             </Link>
             <Link
@@ -56,17 +71,15 @@ const Home = () => {
           </div>
         </div>
 
-        {/* <div className="fixed inset-0 z-[5]">
-          <Image
-            src="/bg-shapes.svg"
-            alt="bg shapes"
-            fill
-            className="object-cover opacity-30"
-            priority
-          />
-        </div> */}
+          <div className="flex h-full w-full items-center justify-center border-t-4 bg-lime-200 p-4">
+            <h1 className="text-[clamp(2.5rem,4vw,4.5rem)] font-bold uppercase">
+              Erick Araujo
+            </h1>
+          </div>
       </div>
-      <div className="flex h-full max-h-20 w-full items-center justify-center gap-4 border-t-4 bg-white px-8 py-4 text-4xl font-bold">
+      </main>
+
+      <div className="flex h-full max-h-20 w-full items-center justify-center gap-4 overflow-hidden border-t-4 bg-white px-8 py-4 text-4xl font-bold">
         <span>PORTIFOLIO</span>
         <FaStar />
         <span>PORTIFOLIO</span>
