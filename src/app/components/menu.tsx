@@ -105,7 +105,7 @@ const Menu = () => {
           </button>
         </Header>
 
-        <div className="container mx-auto flex h-[calc(100%-112px)] justify-center">
+        <div className="h-[calc(100vh-202px)] w-full px-8 py-12">
           <div className="container mx-auto flex h-full flex-col justify-between">
             <div className="flex flex-col gap-10">
               <nav className="flex flex-col gap-4">
@@ -159,6 +159,14 @@ const Menu = () => {
             </div>
           </div>
         </div>
+        <footer className="w-full bg-neutral-900 py-8 text-white">
+          <div className="container mx-auto px-6 text-center">
+            <p>© 2025 Erick Araujo. Todos os direitos reservados.</p>
+            <p className="mt-2 text-lime-300">
+              Desenvolvido com ♥ e muito código.
+            </p>
+          </div>
+        </footer>
       </div>
     </div>
   );
