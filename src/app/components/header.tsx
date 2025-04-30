@@ -1,6 +1,6 @@
-import MenuButton from "./header-menu-button";
+import React from "react";
 
-const Header = () => {
+const Header = ({ children }: { children: React.ReactNode }) => {
   return (
     <header className="w-full border-b-4 border-black bg-white px-8 py-3">
       <div className="container mx-auto flex items-center justify-between">
@@ -8,7 +8,7 @@ const Header = () => {
           E
         </span>
 
-        <MenuButton />
+        {children}
       </div>
     </header>
   );
