@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import Header from "./header";
+import { FaDownload, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
 const menuLinks = [
   { path: "/", label: "Home" },
@@ -14,10 +15,11 @@ const menuLinks = [
 ];
 
 const socialLinks = [
-  { path: "https://github.com/araujoerick", label: "Github" },
+  { path: "https://github.com/araujoerick", label: "Github", Icon: FaGithub },
   {
     path: "https://www.linkedin.com/in/araujoerick09/",
     label: "Linkedin",
+    Icon: FaLinkedinIn,
   },
 ];
 
@@ -35,8 +37,8 @@ const Menu = () => {
 
   useGSAP(
     () => {
-      gsap.set(".menu-link-item", {
-        y: 75,
+      gsap.set(".item-transition-down", {
+        y: -48,
       });
 
       timeLine.current = gsap
@@ -47,12 +49,12 @@ const Menu = () => {
           pointerEvents: "auto",
           ease: "power4.inOut",
         })
-        .to(".menu-link-item", {
+        .to(".item-transition-down", {
           y: 0,
           duration: 1,
           stagger: 0.1,
           ease: "power4.inOut",
-          delay: -0.75,
+          delay: -1,
         });
     },
     { scope: containerRef },
@@ -79,7 +81,7 @@ const Menu = () => {
       </button>
 
       {/* Overlay menu after start */}
-      <div className="menu-clip-path menu-overlay fixed top-0 left-0 z-50 h-screen w-full overflow-hidden bg-lime-300">
+      <div className="menu-clip-path menu-overlay fixed top-0 left-0 z-50 h-screen w-full overflow-x-hidden overflow-y-auto bg-white">
         <Header>
           <button
             onClick={toggleMenu}
@@ -104,25 +106,24 @@ const Menu = () => {
         </Header>
 
         <div className="container mx-auto flex h-[calc(100%-112px)] justify-center">
-          <div className="h-full w-full py-12">
-            <div className="flex h-full flex-col justify-between">
-              <nav className="text-6xl font-light sm:text-8xl">
+          <div className="container mx-auto flex h-full flex-col justify-between">
+            <div className="flex flex-col gap-10">
+              <nav className="flex flex-col gap-4">
                 {menuLinks.map((link) => (
-                  <div
+                  <Link
                     key={link.path}
-                    className="menu-link-item relative py-4"
-                    onClick={toggleMenu}
+                    href={link.path}
+                    className={`item-transition-down w-full min-w-min border-b-4 font-bold hover:bg-lime-300 ${
+                      pathname === link.path && "bg-lime-300"
+                    }`}
                   >
-                    <Link
-                      href={link.path}
-                      className="relative inline-block transition-colors duration-300 hover:text-lime-600"
+                    <div
+                      onClick={toggleMenu}
+                      className="p-4 text-3xl font-bold transition-all duration-200 hover:bg-lime-300 hover:shadow-[8px_8px_0px_rgba(0,0,0)]"
                     >
                       {link.label}
-                      {pathname === link.path && (
-                        <span className="absolute top-[56%] -right-6 h-3 w-3 -translate-y-[56%] rounded-full bg-lime-600" />
-                      )}
-                    </Link>
-                  </div>
+                    </div>
+                  </Link>
                 ))}
               </nav>
 
@@ -134,13 +135,27 @@ const Menu = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       href={link.path}
-                      className="flex gap-2 transition-colors duration-300 hover:text-lime-600 sm:text-lg"
+                      className="neo-transition btn-secondary flex gap-2 p-4 transition-all! duration-300! hover:text-lime-600"
                     >
-                      {link.label}
+                      <link.Icon size={24} className="text-black" />
                     </Link>
                   ))}
                 </div>
               </div>
+            </div>
+
+            <div>
+              <Link
+                href="/docs/erick-araujo-cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download
+              >
+                <button className="item-transition-down btn-primary flex w-full cursor-pointer items-center justify-center gap-2 bg-lime-300 p-4 text-xl font-bold text-black uppercase">
+                  <FaDownload size={16} />
+                  Download CV
+                </button>
+              </Link>
             </div>
           </div>
         </div>
