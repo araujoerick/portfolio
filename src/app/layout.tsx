@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
+import Header from "./components/header";
+import Menu from "./components/menu";
 
 export const metadata: Metadata = {
   title: "Erick Araujo",
@@ -19,8 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* <body className={`${inter.className} antialiased`}>{children}</body> */}
-      <body className={`font-mono antialiased`}>{children}</body>
+      <body className={`font-mono antialiased`}>
+        <Header>
+          <Menu />
+        </Header>
+        {children}
+      </body>
     </html>
   );
 }
