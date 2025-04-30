@@ -19,6 +19,16 @@
   }
 } */
 
+@utility neo-border {
+  @apply border-[3px] border-black;
+}
+@utility neo-shadow {
+  @apply shadow-[8px_8px_0px_rgba(0,0,0)];
+}
+@utility neo-shadow-sm {
+  @apply shadow-[4px_4px_0px_rgba(0,0,0)];
+}
+
 @utility btn-primary {
   @apply rounded-xl border-[3px] border-black bg-lime-400 p-2 font-bold shadow-[4px_4px_0px_rgba(0,0,0)] transition-all duration-300 hover:translate-x-1 hover:translate-y-1 hover:shadow-none;
 }
