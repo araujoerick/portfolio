@@ -9,7 +9,7 @@ const Projetos = () => {
           Projetos
         </h1>
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 lg:max-[1350px]:grid-cols-2">
           <div className="bento-transition neo-border neo-shadow bg-white">
             <div className="overflow-hidden border-b-3 border-black">
               <Image
@@ -167,7 +167,7 @@ const Projetos = () => {
           </div>
         </div>
 
-        <button className="btn-secondary mt-10 cursor-pointer bg-neutral-900 px-40 py-4 text-white">
+        <button className="btn-secondary mt-10 w-[clamp(300px,30vw,500px)] cursor-pointer bg-neutral-800 p-4 text-white">
           Ver mais projetos
         </button>
       </div>
