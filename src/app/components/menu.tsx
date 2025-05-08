@@ -108,7 +108,7 @@ const Menu = () => {
         <div className="h-[calc(100vh-202px)] w-full px-8 py-12">
           <div className="container mx-auto flex h-full flex-col justify-between">
             <div className="flex flex-col gap-10">
-              <nav className="flex flex-col gap-4">
+              <nav className="flex flex-col gap-4 text-black">
                 {menuLinks.map((link) => (
                   <Link
                     key={link.path}
