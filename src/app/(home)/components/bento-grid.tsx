@@ -75,7 +75,7 @@ const BentoGrid = () => {
           </p>
         </div>
         <div className="flex flex-col items-center justify-center gap-2">
-          <p className="text-4xl font-bold text-lime-300">2+</p>
+          <p className="text-4xl font-bold text-lime-300">3+</p>
           <p className="text-[clamp(.875rem,1.5vw,1.25rem)] text-black">
             Anos Exp
           </p>
