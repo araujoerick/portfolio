@@ -23,16 +23,16 @@ const TerminalLoader = () => {
   }, []);
 
   const asciiName = [
-    "███████╗██████╗ ██╗ ██████╗██╗  ██╗",
-    "██╔════╝██╔══██╗██║██╔════╝██║ ██╔╝",
-    "█████╗  ██████╔╝██║██║     █████╔╝ ",
-    "██╔══╝  ██╔══██╗██║██║     ██╔═██╗ ",
-    "███████╗██║  ██║██║╚██████╗██║  ██╗",
-    "╚══════╝╚═╝  ╚═╝╚═╝ ╚═════╝╚═╝  ╚═╝",
+    "██████╗█████╗ ██╗ █████╗██╗ ██╗",
+    "██╔═══╝██╔═██╗██║██╔═══╝██║██╔╝",
+    "████╗  █████╔╝██║██║    ████╔╝ ",
+    "██╔═╝  ██╔═██╗██║██║    ██╔██╗ ",
+    "██████╗██║ ██║██║╚█████╗██║ ██╗",
+    "╚═════╝╚═╝ ╚═╝╚═╝ ╚════╝╚═╝ ╚═╝",
   ];
 
   return (
-    <div className="relative flex h-full w-full items-center overflow-hidden bg-neutral-900 p-2 font-mono text-sm text-lime-300 shadow-md">
+    <div className="relative flex h-full min-h-[280px] w-full items-center overflow-hidden bg-neutral-900 p-2 font-mono text-sm text-lime-300 shadow-md">
       <div className="absolute top-0 right-0 left-0 flex h-6 items-center justify-between rounded-t bg-neutral-800 px-2 text-xs text-neutral-200">
         <div>Terminal</div>
         <div className="flex space-x-1">
