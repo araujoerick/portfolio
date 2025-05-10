@@ -70,40 +70,12 @@ const Menu = () => {
 
   return (
     <div ref={containerRef}>
-      {/* Button to start gsap open menu animation */}
-      <button
-        onClick={toggleMenu}
-        className="btn-primary flex cursor-pointer flex-col items-end justify-center gap-1 px-[13px] py-3.5"
-      >
-        <div className="h-1 w-6 rounded bg-black transition-all duration-300"></div>
-        <div className="h-1 w-5 self-end rounded bg-black transition-all duration-300"></div>
-        <div className="h-1 w-6 rounded bg-black transition-all duration-300"></div>
-      </button>
+      {/* Header with menu to start GSAP animation */}
+      <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 
       {/* Overlay menu after start */}
       <div className="menu-clip-path menu-overlay fixed top-0 left-0 z-50 h-screen w-full overflow-x-hidden overflow-y-auto bg-white">
-        <Header>
-          <button
-            onClick={toggleMenu}
-            className="btn-primary flex cursor-pointer flex-col items-end justify-center gap-1 px-[13px] py-3.5"
-          >
-            <div
-              className={`h-1 w-6 rounded bg-black transition-all duration-300 ${
-                isMenuOpen ? "translate-y-[8px] rotate-45" : ""
-              }`}
-            ></div>
-            <div
-              className={`h-1 w-5 rounded bg-black transition-all duration-300 ${
-                isMenuOpen ? "opacity-0" : ""
-              }`}
-            ></div>
-            <div
-              className={`h-1 w-6 rounded bg-black transition-all duration-300 ${
-                isMenuOpen ? "-translate-y-[8px] -rotate-45" : ""
-              }`}
-            ></div>
-          </button>
-        </Header>
+        <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 
         <div className="flex min-h-[calc(100vh-202px)] w-full flex-col px-8 py-12">
           <div className="container mx-auto flex min-h-full flex-auto flex-col justify-between gap-8">

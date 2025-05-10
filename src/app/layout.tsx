@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "./components/header";
 import Menu from "./components/menu";
 
 export const metadata: Metadata = {
@@ -16,9 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-mono antialiased`}>
-        <Header>
-          <Menu />
-        </Header>
+        <Menu />
         {children}
       </body>
     </html>
