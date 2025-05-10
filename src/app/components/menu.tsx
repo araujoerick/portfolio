@@ -105,8 +105,8 @@ const Menu = () => {
           </button>
         </Header>
 
-        <div className="h-[calc(100vh-202px)] w-full px-8 py-12">
-          <div className="container mx-auto flex h-full flex-col justify-between">
+        <div className="flex min-h-[calc(100vh-202px)] w-full flex-col px-8 py-12">
+          <div className="container mx-auto flex min-h-full flex-auto flex-col justify-between gap-8">
             <div className="flex flex-col gap-10">
               <nav className="flex flex-col gap-4 text-black">
                 {menuLinks.map((link) => (
@@ -127,20 +127,18 @@ const Menu = () => {
                 ))}
               </nav>
 
-              <div className="flex items-center justify-between gap-6">
-                <div className="flex gap-6">
-                  {socialLinks.map((link) => (
-                    <Link
-                      key={link.path}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={link.path}
-                      className="neo-transition btn-secondary flex gap-2 p-4 transition-all! duration-300! hover:text-lime-600"
-                    >
-                      <link.Icon size={24} className="text-black" />
-                    </Link>
-                  ))}
-                </div>
+              <div className="flex gap-6">
+                {socialLinks.map((link) => (
+                  <Link
+                    key={link.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={link.path}
+                    className="neo-transition btn-secondary flex gap-2 p-4 transition-all! duration-300! hover:text-lime-600"
+                  >
+                    <link.Icon size={24} className="text-black" />
+                  </Link>
+                ))}
               </div>
             </div>
 
