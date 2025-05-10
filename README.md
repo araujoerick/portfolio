@@ -60,7 +60,7 @@ http://localhost:3000
 
 ## ✨ Demonstração
 
-Acesse a versão em produção: [Portfólio](https://araujo-portifolio.vercel.app/)
+Acesse a versão em produção: <a href="https://araujo-portifolio.vercel.app/" target="_blank" rel="noopener noreferrer">Portfólio</a>
 
 ---
 
