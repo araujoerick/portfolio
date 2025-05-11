@@ -6,21 +6,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import Header from "./header";
-import { FaDownload, FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { FaDownload } from "react-icons/fa6";
+import { socialLinks } from "../data/socialLinks";
 
 const menuLinks = [
   { path: "/", label: "Home" },
   { path: "/projetos", label: "Projetos" },
   { path: "/contato", label: "Contato" },
-];
-
-const socialLinks = [
-  { path: "https://github.com/araujoerick", label: "Github", Icon: FaGithub },
-  {
-    path: "https://www.linkedin.com/in/araujoerick09/",
-    label: "Linkedin",
-    Icon: FaLinkedinIn,
-  },
 ];
 
 const Menu = () => {
