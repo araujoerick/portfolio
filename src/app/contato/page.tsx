@@ -1,6 +1,9 @@
 import { MdEmail } from "react-icons/md";
 import SectionTitle from "../components/section-title";
 import Link from "next/link";
+import { socialLinks } from "../data/socialLinks";
+import ContactForm from "./components/contact-form";
+import ContactInfo from "./components/contact-info";
 
 const Contato = () => {
   return (
@@ -20,15 +23,20 @@ const Contato = () => {
               </p>
             </div>
 
-            <div>
-              <div className="flex items-center gap-4 select-all">
-                <div className="neo-border bg-lime-300 p-2">
-                  <MdEmail size={20} />
-                </div>
-                <Link href={"mailto:Erick Araujo<araujoerick.dev@gmail.com>"}>
-                  araujoerick.dev@gmail.com
+            <ContactInfo />
+
+            <div className="flex gap-4">
+              {socialLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={link.path}
+                  className="neo-transition btn-secondary flex gap-2 p-2"
+                >
+                  <link.Icon size={20} className="text-black" />
                 </Link>
-              </div>
+              ))}
             </div>
           </div>
 
