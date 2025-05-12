@@ -6,17 +6,17 @@ const projects = [
     imageSrc: "/projects/portifolio.png",
     title: "Stock Manager",
     description:
-      "Gerencie tarefas com facilidade: registre, edite, exclua e filtre por período do dia. Inclui monitoramento diário de hidratação para uma rotina mais saudável.",
+      "Gerencie seu estoque e vendas com facilidade: adicione produtos, registre transações e garanta integridade com ACID Transactions e rotas seguras.",
     techs: [
       "Next",
       "React",
       "TypeScript",
       "Tailwind CSS",
-      "Motion",
-      "GSAP",
+      "Prisma",
+      "PostgreSQL",
       "Shadcn",
-      "Git Hooks",
-      "Husky",
+      "Context API",
+      "ACID",
     ],
     githubUrl: "https://github.com/araujoerick/portifolio",
     deployUrl: "##",
@@ -25,7 +25,7 @@ const projects = [
     imageSrc: "/projects/financeai.png",
     title: "Finance Ai",
     description:
-      "Gerencie tarefas com facilidade: registre, edite, exclua e filtre por período do dia. Inclui monitoramento diário de hidratação para uma rotina mais saudável.",
+      "Gerencie suas finanças com IA: registre entradas, acompanhe gráficos e receba insights personalizados da Gemini AI.",
     techs: [
       "Next.js",
       "React",
@@ -45,7 +45,7 @@ const projects = [
     imageSrc: "/projects/portifolio.png",
     title: "Portifólio",
     description:
-      "Gerencie tarefas com facilidade: registre, edite, exclua e filtre por período do dia. Inclui monitoramento diário de hidratação para uma rotina mais saudável.",
+      "Meu portfólio pessoal com design neo-brutalism, explorando SSR, SSG e animações com GSAP",
     techs: [
       "Next",
       "React",
@@ -86,7 +86,7 @@ const projects = [
     imageSrc: "/projects/dogs-social.png",
     title: "Dogs - Rede Social",
     description:
-      "Gerencie tarefas com facilidade: registre, edite, exclua e filtre por período do dia. Inclui monitoramento diário de hidratação para uma rotina mais saudável.",
+      "Rede social para pets com feed, curtidas, comentários, login e estatísticas de visualização por foto.",
     techs: [
       "React",
       "Vite",
@@ -103,7 +103,7 @@ const projects = [
     imageSrc: "/projects/animais-fant.png",
     title: "Animais Fantásticos",
     description:
-      "Gerencie tarefas com facilidade: registre, edite, exclua e filtre por período do dia. Inclui monitoramento diário de hidratação para uma rotina mais saudável.",
+      "Site interativo com JavaScript puro, incluindo scroll suave, menu mobile, modal de login e slide dinâmico.",
     techs: ["HTML", "CSS", "JavaScript"],
     githubUrl: "https://github.com/araujoerick/animais-fantasticos",
     deployUrl: "https://animais-fantasticos-kappa.vercel.app/",
@@ -112,7 +112,7 @@ const projects = [
     imageSrc: "/projects/bikcraft.png",
     title: "BikCraft",
     description:
-      "Gerencie tarefas com facilidade: registre, edite, exclua e filtre por período do dia. Inclui monitoramento diário de hidratação para uma rotina mais saudável.",
+      "Site fictício de bicicletas com foco em layout responsivo, tipografia e design elegante usando HTML e CSS.",
     techs: ["HTML", "CSS"],
     githubUrl: "https://github.com/araujoerick/bikcraft",
     deployUrl: "https://bikcraft-erickaraujo.vercel.app/",
