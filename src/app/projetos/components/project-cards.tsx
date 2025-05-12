@@ -3,6 +3,23 @@ import TerminalLoader from "./terminal-loader";
 
 const projects = [
   {
+    imageSrc: "/projects/portifolio.png",
+    title: "Portifólio",
+    description:
+      "Meu Portfólio no estilo neo-brutalism e bento grid, ele combina design ousado com usabilidade. O site é totalmente responsivo e animado com GSAP.",
+    techs: [
+      "Next",
+      "React",
+      "TypeScript",
+      "Zod",
+      "EmailJS",
+      "Tailwind CSS",
+      "GSAP",
+    ],
+    githubUrl: "https://github.com/araujoerick/portifolio",
+    deployUrl: "#",
+  },
+  {
     imageSrc: "/projects/stock-manager.png",
     title: "Stock Manager",
     description:
@@ -25,7 +42,7 @@ const projects = [
     imageSrc: "/projects/financeai.png",
     title: "Finance Ai",
     description:
-      "Gerencie suas finanças com IA: registre entradas, acompanhe gráficos e receba insights personalizados da Gemini AI.",
+      "Gerencie suas finanças com IA: registre entradas, acompanhe gráficos e receba insights personalizados da Gemini AI sobre suas finanças.",
     techs: [
       "Next.js",
       "React",
@@ -42,39 +59,17 @@ const projects = [
     deployUrl: "https://financeai-lime.vercel.app/login",
   },
   {
-    imageSrc: "/projects/portifolio.png",
-    title: "Portifólio",
-    description:
-      "Meu portfólio pessoal com design neo-brutalism, explorando SSR, SSG e animações com GSAP",
-    techs: [
-      "Next",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Motion",
-      "GSAP",
-      "Shadcn",
-      "Git Hooks",
-      "Husky",
-    ],
-    githubUrl: "https://github.com/araujoerick/portifolio",
-    deployUrl: "#",
-  },
-  {
     imageSrc: "/projects/task-manager.png",
     title: "Task Manager",
     description:
       "Gerencie tarefas com facilidade: registre, edite, exclua e filtre por período do dia. Inclui monitoramento diário de hidratação para uma rotina mais saudável.",
     techs: [
       "React",
-      "Vite",
-      "Tailwind CSS",
       "React Query",
+      "Tailwind CSS",
       "React Hook Form",
       "Zod",
       "Zustand",
-      "Axios",
-      "Node",
       "Prisma",
       "PostgreSQL",
       "Cron Jobs",
