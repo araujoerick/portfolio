@@ -3,7 +3,7 @@ import TerminalLoader from "./terminal-loader";
 
 const projects = [
   {
-    imageSrc: "/projects/portifolio.png",
+    imageSrc: "/projects/stock-manager.png",
     title: "Stock Manager",
     description:
       "Gerencie seu estoque e vendas com facilidade: adicione produtos, registre transações e garanta integridade com ACID Transactions e rotas seguras.",
@@ -18,8 +18,8 @@ const projects = [
       "Context API",
       "ACID",
     ],
-    githubUrl: "https://github.com/araujoerick/portifolio",
-    deployUrl: "##",
+    githubUrl: "https://github.com/araujoerick/stock-manager",
+    deployUrl: "https://stock-manager-araujo.vercel.app/",
   },
   {
     imageSrc: "/projects/financeai.png",
@@ -58,7 +58,7 @@ const projects = [
       "Husky",
     ],
     githubUrl: "https://github.com/araujoerick/portifolio",
-    deployUrl: "##",
+    deployUrl: "#",
   },
   {
     imageSrc: "/projects/task-manager.png",
