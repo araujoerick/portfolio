@@ -1,9 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import FormInput from "./form-input";
 import FormTextarea from "./form-textarea";
 import { sendContactEmail } from "@/app/actions/contact/form";
+import {
+  ContactFormData,
+  contactFormSchema,
+} from "@/app/actions/contact/form/schema";
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -12,13 +18,31 @@ const ContactForm = () => {
     message: string;
   } | null>(null);
 
-  const handleSubmit = async (formData: FormData) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
+  });
+
+  const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     setSubmitResult(null);
 
     try {
+      const formData = new FormData();
+      formData.append("Nome", data.name);
+      formData.append("Email", data.email);
+      formData.append("Mensagem", data.message);
+
       const result = await sendContactEmail(formData);
       setSubmitResult(result);
+
+      if (result.success) {
+        reset();
+      }
     } catch (error) {
       console.error("Erro ao enviar mensagem:", error);
       setSubmitResult({
@@ -32,10 +56,31 @@ const ContactForm = () => {
 
   return (
     <div>
-      <form action={handleSubmit} className="flex flex-col gap-4">
-        <FormInput label="Nome" type="text" placeholder="John Doe" />
-        <FormInput label="Email" type="email" placeholder="doejohn@email.com" />
-        <FormTextarea label="Mensagem" placeholder="Digite sua mensagem..." />
+      <form onSubmit={handleSubmit(onSubmit)} className={`flex flex-col gap-3`}>
+        <FormInput
+          label="Nome"
+          type="text"
+          placeholder="John Doe"
+          register={register("name")}
+          errors={errors.name?.message ? [errors.name.message] : undefined}
+        />
+
+        <FormInput
+          label="Email"
+          type="email"
+          placeholder="doejohn@email.com"
+          register={register("email")}
+          errors={errors.email?.message ? [errors.email.message] : undefined}
+        />
+
+        <FormTextarea
+          label="Mensagem"
+          placeholder="Digite sua mensagem..."
+          register={register("message")}
+          errors={
+            errors.message?.message ? [errors.message.message] : undefined
+          }
+        />
 
         <button
           type="submit"
