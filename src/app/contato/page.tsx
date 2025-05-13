@@ -6,11 +6,11 @@ import ContactInfo from "./components/contact-info";
 
 const Contato = () => {
   return (
-    <section className="min-h-[calc(100vh-82px)] w-full p-8 select-none">
+    <section className="min-h-[calc(100vh-82px)] w-full bg-lime-200 p-4 select-none min-[430px]:p-8">
       <div className="container mx-auto flex flex-col items-center justify-center gap-5">
         <SectionTitle>Contato</SectionTitle>
 
-        <div className="neo-border neo-shadow grid w-full max-w-[900px] grid-cols-1 gap-8 p-8 md:grid-cols-2">
+        <div className="neo-border neo-shadow grid w-full max-w-[900px] grid-cols-1 gap-8 bg-white p-4 pb-6 min-[430px]:p-8 md:grid-cols-2">
           <div className="flex flex-col gap-8">
             <div className="space-y-4">
               <h2 className="text-2xl font-semibold text-black">
