@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import FormInput from "./form-input";
@@ -12,7 +12,9 @@ import {
 } from "@/app/actions/contact/form/schema";
 
 const ContactForm = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [buttonState, setButtonState] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
   const [submitResult, setSubmitResult] = useState<{
     success: boolean;
     message: string;
@@ -27,8 +29,18 @@ const ContactForm = () => {
     resolver: zodResolver(contactFormSchema),
   });
 
+  useEffect(() => {
+    if (buttonState === "success" || buttonState === "error") {
+      const timer = setTimeout(() => {
+        setButtonState("idle");
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [buttonState]);
+
   const onSubmit = async (data: ContactFormData) => {
-    setIsSubmitting(true);
+    setButtonState("submitting");
     setSubmitResult(null);
 
     try {
@@ -41,22 +53,25 @@ const ContactForm = () => {
       setSubmitResult(result);
 
       if (result.success) {
+        setButtonState("success");
         reset();
+      } else {
+        setButtonState("error");
       }
     } catch (error) {
       console.error("Erro ao enviar mensagem:", error);
+
+      setButtonState("error");
       setSubmitResult({
         success: false,
         message: "Erro inesperado ao enviar mensagem",
       });
-    } finally {
-      setIsSubmitting(false);
     }
   };
 
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)} className={`flex flex-col gap-3`}>
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
         <FormInput
           label="Nome"
           type="text"
@@ -84,19 +99,25 @@ const ContactForm = () => {
 
         <button
           type="submit"
-          disabled={isSubmitting}
-          className={`neo-border neo-shadow active:neo-shadow-sm hover:neo-shadow-sm w-full cursor-pointer bg-lime-300 p-4 font-bold text-black transition-all duration-200 ease-in-out hover:translate-0.5 active:translate-0.5 ${isSubmitting ? "cursor-not-allowed opacity-50" : ""} `}
+          disabled={buttonState === "submitting"}
+          className={`neo-border neo-shadow active:neo-shadow-sm hover:neo-shadow-sm w-full cursor-pointer p-4 font-bold text-black transition-all duration-300 ease-in-out hover:translate-0.5 active:translate-0.5 ${
+            buttonState === "submitting"
+              ? "cursor-not-allowed bg-gray-300 opacity-50"
+              : buttonState === "success"
+                ? "bg-lime-400"
+                : buttonState === "error"
+                  ? "bg-red-400"
+                  : "bg-lime-300"
+          }`}
         >
-          {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
+          {buttonState === "submitting"
+            ? "Enviando..."
+            : buttonState === "success"
+              ? `✓ ${submitResult?.message}`
+              : buttonState === "error"
+                ? `✗ ${submitResult?.message}`
+                : "Enviar Mensagem"}
         </button>
-
-        {submitResult && (
-          <div
-            className={`mt-4 rounded p-3 ${submitResult.success ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"} `}
-          >
-            {submitResult.message}
-          </div>
-        )}
       </form>
     </div>
   );
