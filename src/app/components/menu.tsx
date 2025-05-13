@@ -66,7 +66,7 @@ const Menu = () => {
       <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 
       {/* Overlay menu after start */}
-      <div className="menu-clip-path menu-overlay fixed top-0 left-0 z-50 h-screen w-full overflow-x-hidden overflow-y-auto bg-white">
+      <div className="menu-clip-path menu-overlay fixed top-0 left-0 z-50 h-full w-full overflow-x-hidden overflow-y-auto bg-white">
         <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 
         <div className="flex min-h-[calc(100vh-202px)] w-full flex-col px-8 py-12">
