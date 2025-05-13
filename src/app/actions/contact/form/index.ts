@@ -34,7 +34,7 @@ export async function sendContactEmail(formData: FormData) {
 
     return {
       success: true,
-      message: "Email enviado com sucesso!",
+      message: "Mensagem enviada!",
       status: response.status,
       text: response.text,
     };
@@ -44,14 +44,14 @@ export async function sendContactEmail(formData: FormData) {
     if (error instanceof z.ZodError) {
       return {
         success: false,
-        message: "Erro de validação",
+        message: "Erro de validação.",
         errors: JSON.parse(JSON.stringify(error.errors)),
       };
     }
 
     return {
       success: false,
-      message: "Erro ao enviar email",
+      message: "Mensagem não enviada.",
       error: String(error),
     };
   }
