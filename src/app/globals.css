@@ -22,6 +22,9 @@
 .menu-clip-path {
   clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
 }
+.title-clip-path {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
 
 @utility neo-border {
   @apply border-[3px] border-black;
