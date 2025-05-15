@@ -19,6 +19,16 @@
   }
 } */
 
+.initial-card {
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: transform, opacity;
+}
+
+.card-transition {
+  transition: all 0.3s ease;
+}
+
 .menu-clip-path {
   clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
 }
@@ -40,7 +50,7 @@
   @apply transition-all duration-300 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0px_rgba(0,0,0)];
 }
 @utility bento-transition {
-  @apply transition-all duration-300 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[12px_12px_0px_rgba(0,0,0)];
+  @apply transition-all duration-300 hover:-translate-x-0.5! hover:-translate-y-0.5! hover:shadow-[12px_12px_0px_rgba(0,0,0)];
 }
 
 @utility btn-primary {
