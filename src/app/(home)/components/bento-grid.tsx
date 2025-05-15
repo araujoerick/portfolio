@@ -1,8 +1,8 @@
 import Link from "next/link";
 import BentoCard from "./bento-card";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
-import SkillsList from "./skills-list";
 import Image from "next/image";
+import SkillsByCategory from "./skills-by-category";
 
 const BentoGrid = () => {
   return (
@@ -60,10 +60,7 @@ const BentoGrid = () => {
 
       {/* SKILLS DIV */}
       <BentoCard className="flex-col items-start justify-baseline p-8 min-[580px]:max-lg:row-start-5 lg:row-span-2">
-        <h3 className="text-[clamp(1.5rem,2.2vw,2rem)] font-semibold text-black uppercase">
-          Habilidades
-        </h3>
-        <SkillsList />
+        <SkillsByCategory />
       </BentoCard>
 
       {/* STATS DIV */}
