@@ -20,7 +20,7 @@ const ProjectCard = ({
   deployUrl,
 }: ProjectCardProps) => {
   return (
-    <div className="bento-transition neo-border neo-shadow flex h-full flex-col bg-white">
+    <div className="initial-card bento-transition neo-border neo-shadow flex h-full flex-col bg-white">
       <div className="border-b-3 border-black">
         <Image
           src={imageSrc}
