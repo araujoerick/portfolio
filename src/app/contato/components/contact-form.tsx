@@ -10,6 +10,7 @@ import {
   ContactFormData,
   contactFormSchema,
 } from "@/app/actions/contact/form/schema";
+import SubmitButton from "./submit-button";
 
 const ContactForm = () => {
   const [buttonState, setButtonState] = useState<
@@ -97,27 +98,7 @@ const ContactForm = () => {
           }
         />
 
-        <button
-          type="submit"
-          disabled={buttonState === "submitting"}
-          className={`neo-border neo-shadow active:neo-shadow-sm hover:neo-shadow-sm w-full cursor-pointer p-4 font-bold text-black transition-all duration-300 ease-in-out hover:translate-0.5 active:translate-0.5 ${
-            buttonState === "submitting"
-              ? "cursor-not-allowed bg-gray-300 opacity-50"
-              : buttonState === "success"
-                ? "bg-lime-400"
-                : buttonState === "error"
-                  ? "bg-red-400"
-                  : "bg-lime-300"
-          }`}
-        >
-          {buttonState === "submitting"
-            ? "Enviando..."
-            : buttonState === "success"
-              ? `✓ ${submitResult?.message}`
-              : buttonState === "error"
-                ? `✗ ${submitResult?.message}`
-                : "Enviar Mensagem"}
-        </button>
+        <SubmitButton buttonState={buttonState} submitResult={submitResult} />
       </form>
     </div>
   );
