@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import Header from "./header";
 import { FaDownload } from "react-icons/fa6";
 import { socialLinks } from "../data/socialLinks";
+import DownloadCvButton from "./cv-button";
 
 const menuLinks = [
   { path: "/", label: "Home" },
@@ -106,19 +107,7 @@ const Menu = () => {
               </div>
             </div>
 
-            <div>
-              <a
-                href="/docs/erick-araujo-cv.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                download
-              >
-                <button className="btn-primary flex w-full cursor-pointer items-center justify-center gap-2 bg-lime-300 p-4 text-xl font-bold text-black uppercase">
-                  <FaDownload size={16} />
-                  Download CV
-                </button>
-              </a>
-            </div>
+            <DownloadCvButton icon={<FaDownload size={16} />} />
           </div>
         </div>
         <footer className="w-full bg-neutral-900 py-8 text-white">

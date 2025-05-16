@@ -7,6 +7,7 @@ import Image from "next/image";
 import SkillsByCategory from "./skills-by-category";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import DownloadCvButton from "@/app/components/cv-button";
 
 gsap.registerPlugin(useGSAP);
 
@@ -66,16 +67,7 @@ const BentoGrid = () => {
           priority
         />
 
-        <a
-          href="/docs/erick-araujo-cv.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          download
-        >
-          <button className="btn-primary cursor-pointer bg-lime-300 p-4 text-xl font-bold text-black uppercase">
-            Download CV
-          </button>
-        </a>
+        <DownloadCvButton />
       </BentoCard>
 
       {/* SKILLS DIV */}
