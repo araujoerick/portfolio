@@ -9,6 +9,9 @@ interface ProjectCardProps {
   techs: string[];
   githubUrl: string;
   deployUrl: string;
+  cardRef: React.Ref<HTMLDivElement>;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
 }
 
 const ProjectCard = ({
@@ -18,9 +21,17 @@ const ProjectCard = ({
   techs,
   githubUrl,
   deployUrl,
+  cardRef,
+  onMouseEnter,
+  onMouseLeave,
 }: ProjectCardProps) => {
   return (
-    <div className="initial-card bento-transition neo-border neo-shadow flex h-full flex-col bg-white">
+    <div
+      ref={cardRef}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      className="initial-card neo-border neo-shadow flex h-full flex-col bg-white"
+    >
       <div className="border-b-3 border-black">
         <Image
           src={imageSrc}
