@@ -66,7 +66,7 @@ const BentoGrid = () => {
           priority
         />
 
-        <Link
+        <a
           href="/docs/erick-araujo-cv.pdf"
           target="_blank"
           rel="noopener noreferrer"
@@ -75,7 +75,7 @@ const BentoGrid = () => {
           <button className="btn-primary cursor-pointer bg-lime-300 p-4 text-xl font-bold text-black uppercase">
             Download CV
           </button>
-        </Link>
+        </a>
       </BentoCard>
 
       {/* SKILLS DIV */}

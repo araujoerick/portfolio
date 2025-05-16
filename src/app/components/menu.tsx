@@ -107,7 +107,7 @@ const Menu = () => {
             </div>
 
             <div>
-              <Link
+              <a
                 href="/docs/erick-araujo-cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -117,7 +117,7 @@ const Menu = () => {
                   <FaDownload size={16} />
                   Download CV
                 </button>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
