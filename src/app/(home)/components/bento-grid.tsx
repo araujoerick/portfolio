@@ -8,23 +8,12 @@ import SkillsByCategory from "./skills-by-category";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import DownloadCvButton from "@/app/components/cv-button";
+import { useAnimatedCards } from "@/app/hooks/use-animated-cards";
 
 gsap.registerPlugin(useGSAP);
 
 const BentoGrid = () => {
-  useGSAP(() => {
-    const cards = gsap.utils.toArray(".initial-card") as HTMLElement[];
-
-    gsap.to(cards, {
-      y: 0,
-      opacity: 1,
-      delay: 0.3,
-      stagger: 0.15,
-      duration: 0.5,
-      ease: "power2.inOut",
-      immediateRender: false,
-    });
-  }, []);
+  useAnimatedCards();
 
   return (
     <div className="container mx-auto grid grid-cols-1 items-center justify-center gap-5 min-[580px]:grid-cols-2 lg:grid-cols-4">
