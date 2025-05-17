@@ -11,7 +11,7 @@ const BentoCard = ({
   return (
     <div
       className={cn(
-        "initial-card bento-transition card-transition neo-border neo-shadow flex h-full items-center justify-center rounded-2xl",
+        "initial-card neo-border neo-shadow flex h-full items-center justify-center rounded-2xl",
         className,
       )}
     >
