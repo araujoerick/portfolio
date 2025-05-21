@@ -67,13 +67,9 @@ Acesse a versão em produção: <a href="https://araujo-portifolio.vercel.app/" 
 ### :camera: Capturas do projeto:
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/portfolio-image1.png" alt="">
+  <img src="https://github.com/user-attachments/assets/7e3fdbea-449f-4b29-8963-64d579ae80e5" alt="Home do Projeto">
   <img src="https://github.com/user-attachments/assets/portfolio-image2.png" alt="">
-  <img src="https://github.com/user-attachments/assets/portfolio-image3.png" alt="">
-  <img src="https://github.com/user-attachments/assets/portfolio-image4.png" alt="">
 </div>
-
----
 
 ## 📄 Licença
 
