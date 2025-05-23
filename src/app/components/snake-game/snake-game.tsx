@@ -24,6 +24,7 @@ export const SnakeGame: React.FC<SnakeGameProps> = ({
 }) => {
   const SNAKE_COLOR = "#4CAF50";
   const APPLE_COLOR = "#F44336";
+  const SNAKE_SPEED = 75;
 
   const [dimensions, setDimensions] = useState<GameDimensions>({
     width: 0,
@@ -32,7 +33,7 @@ export const SnakeGame: React.FC<SnakeGameProps> = ({
     blockHeight: 0,
   });
 
-  const [gameLoopTimeout, setGameLoopTimeout] = useState(50);
+  const [gameLoopTimeout, setGameLoopTimeout] = useState(SNAKE_SPEED);
   const [snake, setSnake] = useState<SnakePart[]>([]);
   const [apple, setApple] = useState<Apple>({ Xpos: 0, Ypos: 0 });
   const [direction, setDirection] = useState<Direction>("right");
@@ -303,7 +304,7 @@ export const SnakeGame: React.FC<SnakeGameProps> = ({
     setIsGameOver(false);
     isGameOverRef.current = false;
 
-    setGameLoopTimeout(50);
+    setGameLoopTimeout(SNAKE_SPEED);
     setSnakeColor(initialSnakeColor || SNAKE_COLOR);
     setAppleColor(initialAppleColor || APPLE_COLOR);
     setScore(0);
