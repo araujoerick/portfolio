@@ -8,6 +8,12 @@ import {
   GameDimensions,
   SnakePart,
 } from "@/app/types/snake-game";
+import {
+  BiChevronDown,
+  BiChevronLeft,
+  BiChevronRight,
+  BiChevronUp,
+} from "react-icons/bi";
 
 interface SnakeGameProps {
   percentageWidth?: number;
@@ -24,7 +30,7 @@ export const SnakeGame: React.FC<SnakeGameProps> = ({
 }) => {
   const SNAKE_COLOR = "#4CAF50";
   const APPLE_COLOR = "#F44336";
-  const SNAKE_SPEED = 75;
+  const SNAKE_SPEED = 85;
 
   const [dimensions, setDimensions] = useState<GameDimensions>({
     width: 0,
@@ -438,6 +444,39 @@ export const SnakeGame: React.FC<SnakeGameProps> = ({
       >
         <span>HIGH-SCORE: {highScore}</span>
         <span>SCORE: {score}</span>
+      </div>
+
+      <div className="bottom-4 flex flex-col items-center gap-2 md:hidden">
+        <button
+          onClick={goUp}
+          className="btn-primary bg-lime-300 px-3 py-2 text-black"
+          aria-label="Mover para cima"
+        >
+          <BiChevronUp size={24} />
+        </button>
+        <div className="flex gap-4">
+          <button
+            onClick={goLeft}
+            className="btn-primary bg-lime-300 px-3 py-2 text-black"
+            aria-label="Mover para a esquerda"
+          >
+            <BiChevronLeft size={24} />
+          </button>
+          <button
+            onClick={goDown}
+            className="btn-primary bg-lime-300 px-3 py-2 text-black"
+            aria-label="Mover para baixo"
+          >
+            <BiChevronDown size={24} />
+          </button>
+          <button
+            onClick={goRight}
+            className="btn-primary bg-lime-300 px-3 py-2 text-black"
+            aria-label="Mover para a direita"
+          >
+            <BiChevronRight size={24} />
+          </button>
+        </div>
       </div>
     </>
   );
