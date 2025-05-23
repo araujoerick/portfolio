@@ -396,6 +396,7 @@ export const SnakeGame: React.FC<SnakeGameProps> = ({
         highScore={highScore}
         newHighScore={newHighScore}
         score={score}
+        onRestart={resetGame}
       />
     );
   }

@@ -6,6 +6,7 @@ interface GameOverProps {
   score: number;
   highScore: number;
   newHighScore: boolean;
+  onRestart: () => void;
 }
 
 export const GameOver: React.FC<GameOverProps> = ({
@@ -14,6 +15,7 @@ export const GameOver: React.FC<GameOverProps> = ({
   score,
   highScore,
   newHighScore,
+  onRestart,
 }) => {
   return (
     <div className="pb-12">
@@ -35,9 +37,15 @@ export const GameOver: React.FC<GameOverProps> = ({
           <div>
             {newHighScore ? "New h" : "H"}igh score: {highScore}
           </div>
-          <div className="animate-pulse font-bold text-white">
+          <div className="hidden animate-pulse font-bold text-white md:inline-block">
             Press Space to restart
           </div>
+          <button
+            onClick={onRestart}
+            className="animate-pulse px-4 py-2 font-bold text-white md:hidden"
+          >
+            Press to restart
+          </button>
         </div>
       </div>
     </div>
