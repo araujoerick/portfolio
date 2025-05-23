@@ -66,11 +66,8 @@ export const SnakeGame: React.FC<SnakeGameProps> = ({
   const normalizePosition = useCallback(
     (pos: number, maxPos: number, blockSize: number): number => {
       const normalizedPos = Math.round(pos / blockSize) * blockSize;
-      if (normalizedPos < 0) {
-        return maxPos - blockSize;
-      } else if (normalizedPos >= maxPos) {
-        return 0;
-      }
+      if (normalizedPos < 0) return maxPos - blockSize;
+      if (normalizedPos >= maxPos) return 0;
       return normalizedPos;
     },
     [],
@@ -103,9 +100,7 @@ export const SnakeGame: React.FC<SnakeGameProps> = ({
 
     for (let i = 1; i < startSnakeSize; i++) {
       Xpos -= blockWidth;
-      if (Xpos < 0) {
-        Xpos = width - blockWidth;
-      }
+      if (Xpos < 0) Xpos = width - blockWidth;
       newSnake.push({ Xpos, Ypos });
     }
 
@@ -145,16 +140,16 @@ export const SnakeGame: React.FC<SnakeGameProps> = ({
 
     switch (directionRef.current) {
       case "left":
-        newHeadX = head.Xpos - blockWidth;
+        newHeadX -= blockWidth;
         break;
       case "up":
-        newHeadY = head.Ypos - blockHeight;
+        newHeadY -= blockHeight;
         break;
       case "right":
-        newHeadX = head.Xpos + blockWidth;
+        newHeadX += blockWidth;
         break;
       case "down":
-        newHeadY = head.Ypos + blockHeight;
+        newHeadY += blockHeight;
         break;
     }
 
@@ -206,7 +201,6 @@ export const SnakeGame: React.FC<SnakeGameProps> = ({
     if (head.Xpos === apple.Xpos && head.Ypos === apple.Ypos) {
       const { width, height, blockWidth, blockHeight } = dimensionsRef.current;
       const currentSnake = [...snakeRef.current];
-
       const tail = currentSnake[currentSnake.length - 1];
       currentSnake.push({ Xpos: tail.Xpos, Ypos: tail.Ypos });
 
@@ -266,19 +260,55 @@ export const SnakeGame: React.FC<SnakeGameProps> = ({
   }, []);
 
   const resetGame = useCallback(() => {
-    initGame();
+    const { width, height, blockWidth, blockHeight } = dimensionsRef.current;
+
+    const centerX = Math.floor(width / 2 / blockWidth) * blockWidth;
+    const centerY = Math.floor(height / 2 / blockHeight) * blockHeight;
+
+    const newSnake: SnakePart[] = [];
+    let Xpos = centerX;
+    const Ypos = centerY;
+
+    newSnake.push({ Xpos: centerX, Ypos: centerY });
+
+    for (let i = 1; i < startSnakeSize; i++) {
+      Xpos -= blockWidth;
+      if (Xpos < 0) Xpos = width - blockWidth;
+      newSnake.push({ Xpos, Ypos });
+    }
+
+    let newAppleXpos: number, newAppleYpos: number;
+    do {
+      newAppleXpos =
+        Math.floor(Math.random() * (width / blockWidth)) * blockWidth;
+      newAppleYpos =
+        Math.floor(Math.random() * (height / blockHeight)) * blockHeight;
+    } while (
+      newSnake.some(
+        (part) => part.Xpos === newAppleXpos && part.Ypos === newAppleYpos,
+      )
+    );
+
+    setSnake(newSnake);
+    snakeRef.current = newSnake;
+
+    setApple({ Xpos: newAppleXpos, Ypos: newAppleYpos });
+
     setDirection("right");
     directionRef.current = "right";
+
     setDirectionChanged(false);
     directionChangedRef.current = false;
+
     setIsGameOver(false);
     isGameOverRef.current = false;
+
     setGameLoopTimeout(50);
     setSnakeColor(initialSnakeColor || SNAKE_COLOR);
     setAppleColor(initialAppleColor || APPLE_COLOR);
     setScore(0);
     setNewHighScore(false);
-  }, [initGame, initialSnakeColor, initialAppleColor]);
+  }, [initialSnakeColor, initialAppleColor, startSnakeSize]);
 
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {
