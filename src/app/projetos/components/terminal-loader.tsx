@@ -79,7 +79,9 @@ const TerminalLoader = () => {
           <div className="self-start text-lime-300">
             $ snake_game.exe --start
           </div>
-          <div className="text-xs text-neutral-400">Use WASD to play</div>
+          <div className="hidden text-xs text-neutral-400 md:inline-block">
+            Use WASD to play
+          </div>
           <SnakeGame
             percentageWidth={95}
             startSnakeSize={4}
