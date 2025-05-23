@@ -34,15 +34,17 @@ const BentoGrid = () => {
       {/* ABOUT DIV */}
       <BentoCard className="row-span-2 flex-col gap-4 p-8 min-[580px]:col-span-2">
         <p className="text-[clamp(1rem,1.5vw,1.25rem)] leading-relaxed text-balance text-black">
-          Desenvolvedor focado em construir aplicações web performáticas e
-          modernas utilizando React e Next.js com JavaScript e TypeScript. Tenho
-          conhecimento em integração com APIs REST, meios de pagamento, banco de
-          dados, validação e performance.
+          Desenvolvedor focado na criação de aplicações web modernas e
+          performáticas, utilizando React e Next.js com JavaScript e TypeScript.
+          Tenho experiência em integração com APIs REST, sistemas de pagamento,
+          bancos de dados, além de práticas de validação e otimização de
+          performance.
         </p>
         <p className="text-[clamp(1rem,1.5vw,1.25rem)] leading-relaxed text-balance text-black">
-          Sou apaixonado por transformar ideias em experiências incríveis para
-          os usuários, focando em entregar um código de qualidade e proporcionar
-          a melhor experiência ao cliente.
+          Sou apaixonado por transformar ideias em experiências envolventes,
+          priorizando a qualidade do código e a excelência na experiência do
+          usuário. Estou sempre aberto a conversar sobre projetos e colaborar na
+          criação de soluções eficientes e inovadoras.
         </p>
       </BentoCard>
 
