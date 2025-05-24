@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 interface ProjectCardProps {
@@ -55,26 +54,24 @@ const ProjectCard = ({
         </div>
 
         <div className="flex items-center justify-center gap-4">
-          <Link
+          <a
             href={githubUrl}
-            className="w-full"
+            className="btn-secondary w-full bg-white px-4 py-2 text-center text-black"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`Abrir projeto ${title} no Github`}
           >
-            <button className="btn-secondary w-full cursor-pointer bg-white px-4 py-2 text-black">
-              Github
-            </button>
-          </Link>
-          <Link
+            Github
+          </a>
+          <a
             href={deployUrl}
-            className="w-full"
+            className="btn-secondary w-full bg-lime-300 px-4 py-2 text-center text-black"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`Abrir deploy do projeto ${title}`}
           >
-            <button className="btn-secondary w-full cursor-pointer bg-lime-300 px-4 py-2 text-black">
-              Deploy
-            </button>
-          </Link>
+            Deploy
+          </a>
         </div>
       </div>
     </div>
