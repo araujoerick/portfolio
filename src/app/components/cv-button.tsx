@@ -11,11 +11,11 @@ const DownloadCvButton = ({ icon }: DownloadCvButtonProps) => {
       target="_blank"
       rel="noopener noreferrer"
       download
+      className="btn-primary flex cursor-pointer items-center justify-center gap-2 bg-lime-300 p-4 text-xl font-bold text-black uppercase"
+      aria-label="Baixar currículo em PDF"
     >
-      <button className="btn-primary flex w-full cursor-pointer items-center justify-center gap-2 bg-lime-300 p-4 text-xl font-bold text-black uppercase">
-        {icon}
-        Download CV
-      </button>
+      {icon}
+      Download CV
     </a>
   );
 };
