@@ -61,13 +61,38 @@ const Menu = () => {
     }
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    const mainContent = document.getElementById("main-content");
+
+    if (mainContent) {
+      if (isMenuOpen) {
+        mainContent.setAttribute("inert", "");
+      } else {
+        if (
+          document.activeElement &&
+          containerRef.current?.contains(document.activeElement)
+        ) {
+          document.body.focus();
+        }
+
+        mainContent.removeAttribute("inert");
+      }
+    }
+  }, [isMenuOpen]);
+
   return (
     <div ref={containerRef}>
       {/* Header with menu to start GSAP animation */}
       <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 
       {/* Overlay menu after start */}
-      <div className="menu-clip-path menu-overlay fixed top-0 left-0 z-50 h-full w-full overflow-x-hidden overflow-y-auto bg-white">
+      <div
+        className="menu-clip-path menu-overlay fixed top-0 left-0 z-50 h-full w-full overflow-x-hidden overflow-y-auto bg-white select-none"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu de navegação"
+        inert={!isMenuOpen ? true : undefined}
+      >
         <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 
         <div className="flex min-h-[calc(100vh-202px)] w-full flex-col px-8 py-12">

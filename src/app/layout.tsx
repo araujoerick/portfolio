@@ -1,3 +1,4 @@
+// import { ReactScan } from "./lib/react-scan";
 import type { Metadata } from "next";
 import "./globals.css";
 import Menu from "./components/menu";
@@ -15,9 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`font-mono antialiased`}>
+      {/* <ReactScan /> */}
+      <body tabIndex={-1} className="font-mono antialiased">
         <Menu />
-        {children}
+        <div id="main-content">{children}</div>
       </body>
     </html>
   );
