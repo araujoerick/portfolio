@@ -9,14 +9,14 @@ const BentoCard = ({
   className?: string;
 }) => {
   return (
-    <div
+    <section
       className={cn(
         "initial-card neo-border neo-shadow flex h-full items-center justify-center rounded-2xl",
         className,
       )}
     >
       {children}
-    </div>
+    </section>
   );
 };
 
