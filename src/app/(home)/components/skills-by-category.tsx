@@ -1,38 +1,7 @@
 "use client";
 
+import { SkillCategory, skillsByCategory } from "@/app/data/skills-by-category";
 import React, { useState } from "react";
-
-type SkillCategory = "Frontend" | "Backend" | "Ferramentas";
-
-const skillsByCategory: Record<SkillCategory, string[]> = {
-  Frontend: [
-    "React.js",
-    "Next.js",
-    "TypeScript",
-    "JavaScript",
-    "Tailwind CSS",
-    "HTML5/CSS3",
-    "Zustand",
-  ],
-  Backend: [
-    "Node.js",
-    "REST APIs",
-    "Express",
-    "Prisma",
-    "Fastify",
-    "PostgreSQL",
-    "MongoDB",
-  ],
-  Ferramentas: [
-    "Git",
-    "GitHub",
-    "VS Code",
-    "Docker",
-    "Postman",
-    "Figma",
-    "Jest",
-  ],
-};
 
 const SkillsByCategory = () => {
   const categories = Object.keys(skillsByCategory) as SkillCategory[];
@@ -49,7 +18,7 @@ const SkillsByCategory = () => {
             aria-pressed={index === currentCategoryIndex}
             aria-label={`Ver habilidades de ${category}`}
             onClick={() => setCurrentCategoryIndex(index)}
-            className={`rounded-full px-3 py-1 text-xs transition-all ${
+            className={`rounded-full px-3 py-1 text-xs transition-all duration-300 ${
               index === currentCategoryIndex
                 ? "bg-lime-300 font-medium text-black"
                 : "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -77,7 +46,7 @@ const SkillsByCategory = () => {
         {categories.map((_, index) => (
           <div
             key={index}
-            className={`h-1 rounded-full transition-all ${
+            className={`h-1 rounded-full transition-all duration-300 ${
               index === currentCategoryIndex
                 ? "w-6 bg-lime-300"
                 : "w-2 bg-gray-300"
