@@ -2,7 +2,7 @@
 
 import ProjectCard from "./project-card";
 import TerminalLoader from "./terminal-loader";
-import { projectsData } from "@/app/data/projects";
+import { projectsData } from "@/app/data/projects-data";
 import { useAnimatedCards } from "@/app/hooks/use-animated-cards";
 
 const remainder = projectsData.length % 4;
