@@ -1,13 +1,13 @@
 "use client";
 
 import BentoCard from "./bento-card";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import Image from "next/image";
 import SkillsByCategory from "./skills-by-category";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import DownloadCvButton from "@/app/components/cv-button";
 import { useAnimatedCards } from "@/app/hooks/use-animated-cards";
+import SocialLinks from "@/app/components/social-links";
 
 gsap.registerPlugin(useGSAP);
 
@@ -74,19 +74,19 @@ const BentoGrid = () => {
       <BentoCard className="justify-around gap-4 px-4 py-8 min-[580px]:col-span-2 min-[580px]:p-8">
         <h2 className="sr-only">Estatísticas</h2>
         <div className="flex flex-col items-center justify-center gap-2">
-          <p className="text-4xl font-bold text-lime-300">10+</p>
+          <p className="text-4xl font-bold text-lime-400">10+</p>
           <p className="text-[clamp(.875rem,1.5vw,1.25rem)] text-black">
             Projetos
           </p>
         </div>
         <div className="flex flex-col items-center justify-center gap-2">
-          <p className="text-4xl font-bold text-lime-300">3+</p>
+          <p className="text-4xl font-bold text-lime-400">3+</p>
           <p className="text-[clamp(.875rem,1.5vw,1.25rem)] text-black">
             Anos Exp
           </p>
         </div>
         <div className="flex flex-col items-center justify-center gap-2">
-          <p className="text-4xl font-bold text-lime-300">100%</p>
+          <p className="text-4xl font-bold text-lime-400">100%</p>
           <p className="text-[clamp(.875rem,1.5vw,1.25rem)] text-black">
             Dedicado
           </p>
@@ -96,32 +96,9 @@ const BentoGrid = () => {
       {/* SOCIAL DIV */}
       <BentoCard className="bg-lime-300 p-8 min-[580px]:max-lg:row-start-6">
         <h2 className="sr-only">Links sociais</h2>
-        <ul className="flex h-full items-center justify-center gap-4">
-          <li>
-            <a
-              href="https://www.linkedin.com/in/araujoerick09/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Ir para o perfil de Erick Araujo no LinkedIn"
-            >
-              <div className="btn-primary bg-white p-4">
-                <FaLinkedinIn size={24} />
-              </div>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.github.com/araujoerick"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Ir para o perfil de Erick Araujo no Github"
-            >
-              <div className="btn-primary bg-white p-4">
-                <FaGithub size={24} />
-              </div>
-            </a>
-          </li>
-        </ul>
+        <div className="flex h-full items-center justify-center gap-4">
+          <SocialLinks iconSize={24} className="btn-primary bg-white p-4" />
+        </div>
       </BentoCard>
     </div>
   );

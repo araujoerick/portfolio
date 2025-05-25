@@ -2,12 +2,11 @@
 
 import React from "react";
 import ContactInfo from "./contact-info";
-import { socialLinks } from "@/app/data/socialLinks";
-import Link from "next/link";
 import ContactForm from "./contact-form";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useAnimatedCards } from "@/app/hooks/use-animated-cards";
+import SocialLinks from "@/app/components/social-links";
 
 gsap.registerPlugin(useGSAP);
 
@@ -30,17 +29,10 @@ const ContactCard = () => {
         <ContactInfo />
 
         <div className="flex gap-4">
-          {socialLinks.map((link) => (
-            <Link
-              key={link.path}
-              target="_blank"
-              rel="noopener noreferrer"
-              href={link.path}
-              className="neo-transition btn-secondary flex gap-2 p-2"
-            >
-              <link.Icon size={20} className="text-black" />
-            </Link>
-          ))}
+          <SocialLinks
+            iconSize={20}
+            className="neo-transition btn-secondary p-2"
+          />
         </div>
       </div>
 

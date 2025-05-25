@@ -7,8 +7,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import Header from "./header";
 import { FaDownload } from "react-icons/fa6";
-import { socialLinks } from "../data/socialLinks";
 import DownloadCvButton from "./cv-button";
+import SocialLinks from "./social-links";
 
 const menuLinks = [
   { path: "/", label: "Home" },
@@ -117,18 +117,14 @@ const Menu = () => {
                 ))}
               </nav>
 
+              <div>
+                <h2 className="sr-only">Links sociais</h2>
               <div className="flex gap-6">
-                {socialLinks.map((link) => (
-                  <Link
-                    key={link.path}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={link.path}
-                    className="neo-transition btn-secondary flex gap-2 p-4 transition-all! duration-300! hover:text-lime-600"
-                  >
-                    <link.Icon size={24} className="text-black" />
-                  </Link>
-                ))}
+                  <SocialLinks
+                    iconSize={24}
+                    className="neo-transition btn-secondary p-4 transition-all! duration-300!"
+                  />
+                </div>
               </div>
             </div>
 
