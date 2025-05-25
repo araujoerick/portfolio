@@ -33,9 +33,9 @@ const ProjectCard = ({
 
       <div className="flex h-full flex-col justify-between gap-4 bg-white px-7 pt-3 pb-6">
         <div className="space-y-1">
-          <h3 className="text-[clamp(1.5rem,4vw,1.75rem)] font-semibold text-black">
+          <h2 className="text-[clamp(1.5rem,4vw,1.75rem)] font-semibold text-black">
             {title}
-          </h3>
+          </h2>
 
           <p className="w-full text-[clamp(1rem,1.5vw,1.125rem)] text-balance text-neutral-700">
             {description}
