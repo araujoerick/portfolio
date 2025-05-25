@@ -80,6 +80,22 @@ const Menu = () => {
     }
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isMenuOpen, setIsMenuOpen]);
+
   return (
     <div ref={containerRef}>
       {/* Header with menu to start GSAP animation */}
@@ -95,7 +111,10 @@ const Menu = () => {
       >
         <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 
-        <div className="flex min-h-[calc(100vh-202px)] w-full flex-col px-8 py-12">
+        <nav
+          aria-label="Menu principal"
+          className="flex min-h-[calc(100vh-202px)] w-full flex-col px-8 py-12"
+        >
           <div className="container mx-auto flex min-h-full flex-auto flex-col justify-between gap-8">
             <div className="flex flex-col gap-10">
               <nav className="flex flex-col gap-4 text-black">
@@ -130,7 +149,7 @@ const Menu = () => {
 
             <DownloadCvButton icon={<FaDownload size={16} />} />
           </div>
-        </div>
+        </nav>
         <footer className="w-full bg-neutral-900 py-8 text-white">
           <div className="container mx-auto px-6 text-center">
             <p>© 2025 Erick Araujo. Todos os direitos reservados.</p>
