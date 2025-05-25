@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 type SkillCategory = "Frontend" | "Backend" | "Ferramentas";
 
@@ -39,22 +39,15 @@ const SkillsByCategory = () => {
   const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
   const currentCategory = categories[currentCategoryIndex];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentCategoryIndex(
-        (prevIndex) => (prevIndex + 1) % categories.length,
-      );
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [categories.length]);
-
   return (
     <div className="w-full flex-col items-start justify-start">
       <div className="mb-4 flex justify-start gap-2 max-sm:overflow-x-auto sm:flex-wrap">
+        <h2 className="sr-only">Habilidades em {currentCategory}</h2>
         {categories.map((category, index) => (
           <button
             key={category}
+            aria-pressed={index === currentCategoryIndex}
+            aria-label={`Ver habilidades de ${category}`}
             onClick={() => setCurrentCategoryIndex(index)}
             className={`rounded-full px-3 py-1 text-xs transition-all ${
               index === currentCategoryIndex
