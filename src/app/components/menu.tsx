@@ -8,6 +8,8 @@ import { useEffect, useRef, useState } from "react";
 import Header from "./header";
 import { FaDownload } from "react-icons/fa6";
 import DownloadCvButton from "./cv-button";
+import { IoLogoFigma } from "react-icons/io5";
+import { SiNextdotjs, SiTypescript } from "react-icons/si";
 import SocialLinks from "./social-links";
 
 const menuLinks = [
@@ -138,7 +140,7 @@ const Menu = () => {
 
               <div>
                 <h2 className="sr-only">Links sociais</h2>
-              <div className="flex gap-6">
+                <div className="flex gap-6">
                   <SocialLinks
                     iconSize={24}
                     className="neo-transition btn-secondary p-4 transition-all! duration-300!"
@@ -151,11 +153,17 @@ const Menu = () => {
           </div>
         </nav>
         <footer className="w-full bg-neutral-900 py-8 text-white">
-          <div className="container mx-auto px-6 text-center">
+          <div className="container mx-auto flex flex-col items-center justify-center px-6">
             <p>© 2025 Erick Araujo. Todos os direitos reservados.</p>
-            <p className="mt-2 text-lime-300">
-              Desenvolvido com ♥ e muito código.
-            </p>
+            <div className="mt-2 flex items-center gap-2 text-lime-300">
+              Desenvolvido com
+              <span className="flex gap-1 text-lime-100">
+                <SiNextdotjs className="mr-0.5" />
+                <SiTypescript />
+                <IoLogoFigma />
+              </span>
+              e muito código.
+            </div>
           </div>
         </footer>
       </div>
