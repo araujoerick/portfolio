@@ -153,16 +153,16 @@ const Menu = () => {
           </div>
         </nav>
         <footer className="w-full bg-neutral-900 py-8 text-white">
-          <div className="container mx-auto flex flex-col items-center justify-center px-6">
-            <p>© 2025 Erick Araujo. Todos os direitos reservados.</p>
-            <div className="mt-2 flex items-center gap-2 text-lime-300">
-              Desenvolvido com
-              <span className="flex gap-1 text-lime-100">
-                <SiNextdotjs className="mr-0.5" />
-                <SiTypescript />
-                <IoLogoFigma />
-              </span>
-              e muito código.
+          <div className="container mx-auto flex flex-col items-center justify-center px-6 text-center">
+            <p className="text-sm sm:text-base">
+              © 2025 Erick Araujo. Todos os direitos reservados.
+            </p>
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-sm text-lime-300 sm:text-base">
+              <span>Desenvolvido com</span>
+              <SiNextdotjs />
+              <SiTypescript />
+              <IoLogoFigma />
+              <span>e muito código.</span>
             </div>
           </div>
         </footer>
