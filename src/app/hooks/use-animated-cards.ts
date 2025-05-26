@@ -16,8 +16,6 @@ export const useAnimatedCards = (
   useGSAP(() => {
     const cards = gsap.utils.toArray(selector) as HTMLElement[];
 
-    gsap.set(cards, { y: 50, opacity: 0 });
-
     gsap.to(cards, {
       y: 0,
       opacity: 1,
@@ -25,10 +23,6 @@ export const useAnimatedCards = (
       stagger: 0.15,
       duration: 0.5,
       ease: "power2.inOut",
-      immediateRender: false,
-      onComplete: () => {
-        gsap.set(cards, { clearProps: "opacity,y" });
-      },
     });
 
     if (options.hover) {
