@@ -450,7 +450,7 @@ export const SnakeGame: React.FC<SnakeGameProps> = ({
       <div className="bottom-4 flex flex-col items-center gap-2 md:hidden">
         <button
           onClick={goUp}
-          className="btn-primary bg-lime-300 px-3 py-2 text-black"
+          className="btn-primary bg-lime-300 px-4 py-3 text-black"
           aria-label="Mover para cima"
         >
           <BiChevronUp size={24} />
@@ -458,21 +458,21 @@ export const SnakeGame: React.FC<SnakeGameProps> = ({
         <div className="flex gap-4">
           <button
             onClick={goLeft}
-            className="btn-primary bg-lime-300 px-3 py-2 text-black"
+            className="btn-primary bg-lime-300 px-4 py-3 text-black"
             aria-label="Mover para a esquerda"
           >
             <BiChevronLeft size={24} />
           </button>
           <button
             onClick={goDown}
-            className="btn-primary bg-lime-300 px-3 py-2 text-black"
+            className="btn-primary bg-lime-300 px-4 py-3 text-black"
             aria-label="Mover para baixo"
           >
             <BiChevronDown size={24} />
           </button>
           <button
             onClick={goRight}
-            className="btn-primary bg-lime-300 px-3 py-2 text-black"
+            className="btn-primary bg-lime-300 px-4 py-3 text-black"
             aria-label="Mover para a direita"
           >
             <BiChevronRight size={24} />
