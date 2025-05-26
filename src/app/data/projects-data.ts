@@ -1,7 +1,7 @@
 export const projectsData = [
   {
     imageSrc: "/projects/portifolio.png",
-    title: "Portifólio",
+    title: "Portfólio",
     description:
       "Meu Portfólio no estilo neo-brutalism e bento grid, ele combina design ousado com usabilidade. O site é totalmente responsivo e animado com GSAP.",
     techs: [
@@ -15,7 +15,7 @@ export const projectsData = [
       "GSAP",
       "A11y",
     ],
-    githubUrl: "https://github.com/araujoerick/portifolio",
+    githubUrl: "https://github.com/araujoerick/portfolio",
     deployUrl: "#",
   },
   {
