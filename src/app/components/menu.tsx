@@ -115,7 +115,7 @@ const Menu = () => {
 
         <nav
           aria-label="Menu principal"
-          className="flex min-h-[calc(100vh-202px)] w-full flex-col px-8 py-12"
+          className="flex min-h-[calc(100vh-206px)] w-full flex-col px-8 py-12"
         >
           <div className="container mx-auto flex min-h-full flex-auto flex-col justify-between gap-8">
             <div className="flex flex-col gap-10">
@@ -154,10 +154,8 @@ const Menu = () => {
         </nav>
         <footer className="w-full bg-neutral-900 py-8 text-white">
           <div className="container mx-auto flex flex-col items-center justify-center px-6 text-center">
-            <p className="text-sm sm:text-base">
-              © 2025 Erick Araujo. Todos os direitos reservados.
-            </p>
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-sm text-lime-300 sm:text-base">
+            <p>© 2025 Erick Araujo. Todos os direitos reservados.</p>
+            <div className="mt-3 flex flex-wrap items-center justify-center gap-2 text-lime-300">
               <span>Desenvolvido com</span>
               <SiNextdotjs />
               <SiTypescript />
