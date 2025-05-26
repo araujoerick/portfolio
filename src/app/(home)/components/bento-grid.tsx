@@ -51,7 +51,7 @@ const BentoGrid = () => {
       </BentoCard>
 
       {/* PROFILE DIV */}
-      <BentoCard className="row-span-2 flex h-full flex-col items-center justify-between gap-4 overflow-hidden rounded-2xl bg-neutral-200 pb-12 lg:row-span-3">
+      <BentoCard className="row-span-2 flex h-full flex-col items-center justify-between gap-4 overflow-hidden rounded-2xl bg-neutral-200 pb-12 xl:row-span-3">
         <h2 className="sr-only">Foto de perfil e currículo</h2>
         <Image
           src="/perfil-base.png"
@@ -94,7 +94,7 @@ const BentoGrid = () => {
       </BentoCard>
 
       {/* SOCIAL DIV */}
-      <BentoCard className="bg-lime-300 p-8 min-[580px]:max-lg:row-start-6">
+      <BentoCard className="bg-lime-300 p-8 min-[580px]:max-lg:row-start-6 min-lg:max-xl:col-span-2">
         <h2 className="sr-only">Links sociais</h2>
         <div className="flex h-full items-center justify-center gap-4">
           <SocialLinks iconSize={24} className="btn-primary bg-white p-4" />
