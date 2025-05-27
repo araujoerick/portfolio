@@ -1,8 +1,5 @@
 # Portfólio Pessoal  
-**`Next.js`**  
-**`Tailwind CSS`**  
-**`GSAP`**  
-**`React Hook Form + Zod`**
+**`Next.js`**  **`Tailwind CSS`**  **`GSAP`**  **`A11y`** **`React Hook Form + Zod`**
 
 ## 📋 Sobre o Projeto
 
@@ -15,7 +12,7 @@ Este **Portfólio** foi criado com o objetivo de apresentar meus projetos, habil
 - **Exibição de Projetos**: Cards animados com informações e links dos principais projetos.  
 - **Formulário de Contato**: Validação com Zod e envio utilizando React Hook Form.  
 - **Design Responsivo**: Experiência adaptável para dispositivos móveis e desktops.  
-- **Animações Suaves**: Navegação e interações com transições utilizando Framer Motion.  
+- **Animações Suaves**: Navegação e interações com transições utilizando GSAP.  
 
 ---
 
@@ -26,6 +23,7 @@ Este **Portfólio** foi criado com o objetivo de apresentar meus projetos, habil
 - **Tailwind CSS**: Utilitário para estilização rápida e responsiva.  
 - **GSAP**: Biblioteca para animações fluidas e declarativas.  
 - **React Hook Form + Zod**: Gerenciamento e validação de formulários.  
+- **A11y**: Garante navegação acessível por leitores de tela e teclado.  
 
 ---
 
@@ -60,15 +58,15 @@ http://localhost:3000
 
 ## ✨ Demonstração
 
-Acesse a versão em produção: <a href="https://araujo-portifolio.vercel.app/" target="_blank" rel="noopener noreferrer">Portfólio</a>
+Acesse a versão em produção: <a href="https://araujo-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer">Portfólio</a>
 
 ---
 
 ### :camera: Capturas do projeto:
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/7e3fdbea-449f-4b29-8963-64d579ae80e5" alt="Home do Projeto">
-  <img src="https://github.com/user-attachments/assets/portfolio-image2.png" alt="">
+  <img src="https://github.com/user-attachments/assets/bb7d30e7-99ab-4375-aaa1-1be680e4215f" alt="Página Home">
+  <img src="https://github.com/user-attachments/assets/bc8c41dc-db14-432c-a70e-ed4ff7008b75" alt="Página Projeto Mobile">
 </div>
 
 ## 📄 Licença
