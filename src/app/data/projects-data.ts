@@ -1,5 +1,49 @@
 export const projectsData = [
   {
+    imageSrc: "/projects/hodlon.png",
+    title: "Hodlon",
+    description:
+      "Plataforma completa de gestão de criptomoedas com landing page moderna e dashboard interativo. Integração com APIs de exchanges para gerenciamento em tempo real de portfólio crypto.",
+    techs: [
+      "Next.js",
+      "TypeScript",
+      "Material UI",
+      "React Query",
+      "Redux",
+      "ApexCharts",
+      "Server-Sent Events",
+      "React Hook Form",
+      "Yup",
+      "Ethers.js",
+      "Next Intl",
+    ],
+    githubUrl: "",
+    deployUrl: "https://hodlon.app/",
+  },
+  {
+    imageSrc: "/projects/evx-finance.png",
+    title: "EVX Finance",
+    description:
+      "Plataforma de swap de criptomoedas com landing page totalmente redesenhada e dashboard de alta performance. Implementação de melhorias significativas de performance e UX no dashboard.",
+    techs: [
+      "Next.js",
+      "TypeScript",
+      "Material UI",
+      "Emotion",
+      "React Query",
+      "i18n",
+      "GraphQL",
+      "Apollo Client",
+      "Wagmi",
+      "Viem",
+      "React Hook Form",
+      "Zod",
+      "Next Intl",
+    ],
+    githubUrl: "",
+    deployUrl: "",
+  },
+  {
     imageSrc: "/projects/portifolio.png",
     title: "Portfólio",
     description:
@@ -93,22 +137,22 @@ export const projectsData = [
     githubUrl: "https://github.com/araujoerick/dogs",
     deployUrl: "https://dogs-mu-neon.vercel.app",
   },
-  {
-    imageSrc: "/projects/animais-fant.png",
-    title: "Animais Fantásticos",
-    description:
-      "Site interativo com JavaScript puro, incluindo scroll suave, menu mobile, modal de login e slide dinâmico.",
-    techs: ["HTML", "CSS", "JavaScript"],
-    githubUrl: "https://github.com/araujoerick/animais-fantasticos",
-    deployUrl: "https://animais-fantasticos-kappa.vercel.app/",
-  },
-  {
-    imageSrc: "/projects/bikcraft.png",
-    title: "BikCraft",
-    description:
-      "Site fictício de bicicletas com foco em layout responsivo, tipografia e design elegante usando HTML e CSS.",
-    techs: ["HTML", "CSS"],
-    githubUrl: "https://github.com/araujoerick/bikcraft",
-    deployUrl: "https://bikcraft-erickaraujo.vercel.app/",
-  },
+  // {
+  //   imageSrc: "/projects/animais-fant.png",
+  //   title: "Animais Fantásticos",
+  //   description:
+  //     "Site interativo com JavaScript puro, incluindo scroll suave, menu mobile, modal de login e slide dinâmico.",
+  //   techs: ["HTML", "CSS", "JavaScript"],
+  //   githubUrl: "https://github.com/araujoerick/animais-fantasticos",
+  //   deployUrl: "https://animais-fantasticos-kappa.vercel.app/",
+  // },
+  // {
+  //   imageSrc: "/projects/bikcraft.png",
+  //   title: "BikCraft",
+  //   description:
+  //     "Site fictício de bicicletas com foco em layout responsivo, tipografia e design elegante usando HTML e CSS.",
+  //   techs: ["HTML", "CSS"],
+  //   githubUrl: "https://github.com/araujoerick/bikcraft",
+  //   deployUrl: "https://bikcraft-erickaraujo.vercel.app/",
+  // },
 ];

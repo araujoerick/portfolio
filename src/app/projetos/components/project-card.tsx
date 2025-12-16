@@ -54,24 +54,44 @@ const ProjectCard = ({
         </div>
 
         <div className="flex items-center justify-center gap-4">
-          <a
-            href={githubUrl}
-            className="btn-secondary w-full bg-white px-4 py-2 text-center text-black"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`Abrir projeto ${title} no Github`}
-          >
-            Github
-          </a>
-          <a
-            href={deployUrl}
-            className="btn-secondary w-full bg-lime-300 px-4 py-2 text-center text-black"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`Abrir deploy do projeto ${title}`}
-          >
-            Deploy
-          </a>
+          {githubUrl ? (
+            <a
+              href={githubUrl}
+              className="btn-secondary w-full bg-white px-4 py-2 text-center text-black"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Abrir projeto ${title} no Github`}
+            >
+              Github
+            </a>
+          ) : (
+            <button
+              className="btn-secondary w-full bg-neutral-200 px-4 py-2 text-center text-neutral-500 opacity-60"
+              disabled
+              aria-label="Código privado"
+            >
+              Privado
+            </button>
+          )}
+          {deployUrl ? (
+            <a
+              href={deployUrl}
+              className="btn-secondary w-full bg-lime-300 px-4 py-2 text-center text-black"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Abrir deploy do projeto ${title}`}
+            >
+              Deploy
+            </a>
+          ) : (
+            <button
+              className="btn-secondary w-full bg-neutral-200 px-4 py-2 text-center text-neutral-500 opacity-60"
+              disabled
+              aria-label="Deploy privado"
+            >
+              Privado
+            </button>
+          )}
         </div>
       </div>
     </div>
