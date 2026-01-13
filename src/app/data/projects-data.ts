@@ -41,7 +41,7 @@ export const projectsData = [
       "Next Intl",
     ],
     githubUrl: "",
-    deployUrl: "",
+    deployUrl: "https://evx.finance/",
   },
   {
     imageSrc: "/projects/portifolio.png",
